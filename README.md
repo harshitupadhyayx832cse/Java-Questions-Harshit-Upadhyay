@@ -62,6 +62,8 @@ public class SmartBillingSystem {
         sc.close();
     }
 }
+
+
 2. Employee Salary Calculator (Variables + if-else)
 
 Write a Java program to calculate net salary:
