@@ -297,3 +297,55 @@ public class ElectricityBillGenerator {
         sc.close();
     }
 }
+
+6. ATM Withdrawal System (if-else + logical operators)
+
+Write a Java program that:
+
+* Takes account balance and withdrawal amount
+* Conditions:
+
+  * Withdrawal must be multiple of 100
+  * Minimum balance after withdrawal must be ₹1000
+* Print success or failure message
+
+Focus: compound conditions, logical AND
+
+import java.util.Scanner;
+
+public class ATMWithdrawalSystem {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+       
+        System.out.print("Enter Account Balance: ");
+        double balance = sc.nextDouble();
+
+        System.out.print("Enter Withdrawal Amount: ");
+        double withdrawAmount = sc.nextDouble();
+
+       
+        if (withdrawAmount % 100 == 0 && (balance - withdrawAmount) >= 1000) {
+
+            balance = balance - withdrawAmount;
+
+            System.out.println("\nWithdrawal Successful!");
+            System.out.println("Remaining Balance: ₹" + balance);
+
+        } else {
+
+            System.out.println("\nWithdrawal Failed!");
+
+            if (withdrawAmount % 100 != 0) {
+                System.out.println("Reason: Amount must be multiple of 100.");
+            }
+
+            if ((balance - withdrawAmount) < 1000) {
+                System.out.println("Reason: Minimum balance of ₹1000 must be maintained.");
+            }
+        }
+
+        sc.close();
+    }
+}
