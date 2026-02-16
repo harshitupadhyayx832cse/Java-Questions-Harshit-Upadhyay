@@ -62,3 +62,59 @@ public class SmartBillingSystem {
         sc.close();
     }
 }
+2. Employee Salary Calculator (Variables + if-else)
+
+Write a Java program to calculate net salary:
+
+* Input: basic salary
+* If basic ≥ 30000:
+
+  * HRA = 20%
+  * DA = 15%
+* Else:
+
+  * HRA = 10%
+  * DA = 8%
+* Deduct PF = 12% of basic
+* Print net salary
+
+Focus: variables, percentage calculation, conditionals
+
+import java.util.Scanner;
+
+public class EmployeeSalaryCalculator {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Basic Salary: ");
+        double basic = sc.nextDouble();
+
+        double hra, da, pf, netSalary;
+
+        
+        if (basic >= 30000) {
+            hra = basic * 0.20;   
+            da = basic * 0.15;    
+        } else {
+            hra = basic * 0.10;   
+            da = basic * 0.08;    
+        }
+
+      
+        pf = basic * 0.12;
+
+        
+        netSalary = basic + hra + da - pf;
+
+       
+        System.out.println("\n----- SALARY DETAILS -----");
+        System.out.println("Basic Salary: " + basic);
+        System.out.println("HRA: " + hra);
+        System.out.println("DA: " + da);
+        System.out.println("PF Deduction: " + pf);
+        System.out.println("Net Salary: " + netSalary);
+
+        sc.close();
+    }
+}
