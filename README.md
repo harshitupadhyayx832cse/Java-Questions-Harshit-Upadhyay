@@ -492,3 +492,55 @@ public class PrimeNumberRangeChecker {
         sc.close();
     }
 }
+
+10. Login Authentication System (if-else + loops)
+
+Write a Java program that:
+
+* Stores a predefined username and password
+* Allows user maximum 3 attempts to login
+* Locks the account after 3 wrong attempts
+
+import java.util.Scanner;
+
+public class LoginAuthenticationSystem {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+       
+        String correctUsername = "admin";
+        String correctPassword = "1234";
+
+        int attempts = 0;
+        boolean isLoggedIn = false;
+
+       
+        while (attempts < 3) {
+
+            System.out.print("Enter Username: ");
+            String username = sc.nextLine();
+
+            System.out.print("Enter Password: ");
+            String password = sc.nextLine();
+
+            
+            if (username.equals(correctUsername) && password.equals(correctPassword)) {
+                System.out.println("\nLogin Successful!");
+                isLoggedIn = true;
+                break; 
+            } else {
+                attempts++;
+                System.out.println("Incorrect Username or Password.");
+                System.out.println("Attempts left: " + (3 - attempts));
+            }
+        }
+
+       
+        if (!isLoggedIn) {
+            System.out.println("\nAccount Locked! Too many failed attempts.");
+        }
+
+        sc.close();
+    }
+}
