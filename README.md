@@ -170,3 +170,80 @@ public class NumberClassificationTool {
         sc.close();
     }
 }
+
+4. Menu-Driven Calculator (switch case)
+
+Write a Java program using switch that:
+
+* Takes two numbers from the user
+* Displays menu:
+
+  1. Addition
+  2. Subtraction
+  3. Multiplication
+  4. Division
+  5. Modulus
+* Performs operation based on user choice
+
+Focus: switch case, arithmetic operators
+
+import java.util.Scanner;
+
+public class MenuDrivenCalculator {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+
+        
+        System.out.println("\n---- MENU ----");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Modulus");
+        System.out.print("Enter your choice (1-5): ");
+
+        int choice = sc.nextInt();
+
+        
+        switch (choice) {
+
+            case 1:
+                System.out.println("Result = " + (num1 + num2));
+                break;
+
+            case 2:
+                System.out.println("Result = " + (num1 - num2));
+                break;
+
+            case 3:
+                System.out.println("Result = " + (num1 * num2));
+                break;
+
+            case 4:
+                if (num2 != 0) {
+                    System.out.println("Result = " + (num1 / num2));
+                } else {
+                    System.out.println("Division by zero is not allowed.");
+                }
+                break;
+
+            case 5:
+                System.out.println("Result = " + (num1 % num2));
+                break;
+
+            default:
+                System.out.println("Invalid choice. Please select between 1 to 5.");
+        }
+
+        sc.close();
+    }
+}
+
