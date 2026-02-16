@@ -247,3 +247,53 @@ public class MenuDrivenCalculator {
     }
 }
 
+5. Electricity Bill Generator (if-else ladder)
+
+Write a Java program to calculate electricity bill:
+
+* Input units consumed
+* Charges:
+
+  * First 100 units → ₹2/unit
+  * Next 100 units → ₹3/unit
+  * Above 200 units → ₹5/unit
+* Add fixed meter charge ₹150
+
+Focus: if-else ladder, real-world logic
+
+import java.util.Scanner;
+
+public class ElectricityBillGenerator {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter units consumed: ");
+        int units = sc.nextInt();
+
+        double billAmount;
+
+       
+        if (units <= 100) {
+            billAmount = units * 2;
+        }
+        else if (units <= 200) {
+            billAmount = (100 * 2) + ((units - 100) * 3);
+        }
+        else {
+            billAmount = (100 * 2) + (100 * 3) + ((units - 200) * 5);
+        }
+
+        
+        billAmount = billAmount + 150;
+
+       
+        System.out.println("\n----- ELECTRICITY BILL -----");
+        System.out.println("Units Consumed: " + units);
+        System.out.println("Fixed Meter Charge: 150");
+        System.out.println("Total Bill Amount: ₹" + billAmount);
+
+        sc.close();
+    }
+}
