@@ -349,3 +349,54 @@ public class ATMWithdrawalSystem {
         sc.close();
     }
 }
+
+7. Reverse and Digit Analysis of a Number (loops + operators)
+
+Write a Java program that:
+
+* Takes an integer
+* Finds:
+
+  * Reverse of the number
+  * Sum of digits
+  * Count of digits
+
+Focus: while loop, % and / operators
+
+import java.util.Scanner;
+
+public class ReverseAndDigitAnalysis {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+       
+        System.out.print("Enter an integer: ");
+        int number = sc.nextInt();
+
+        int originalNumber = number;   
+        int reverse = 0;
+        int sum = 0;
+        int count = 0;
+
+       
+        while (number != 0) {
+
+            int digit = number % 10;  
+            reverse = reverse * 10 + digit;  
+            sum = sum + digit;         
+
+            number = number / 10;      
+        }
+
+        
+        System.out.println("\n----- RESULT -----");
+        System.out.println("Original Number: " + originalNumber);
+        System.out.println("Reverse: " + reverse);
+        System.out.println("Sum of Digits: " + sum);
+        System.out.println("Count of Digits: " + count);
+
+        sc.close();
+    }
+}
+
